@@ -52,19 +52,16 @@
                             <tr>
                                 <td><b>Associate Name</b></td>
                                 <td>@Html.TextBoxFor(i => i.Associatename, new { @class = "", required = "required", @type ="text" })</td>
-
                                 <td> @Html.ValidationMessageFor(model => model.Associatename, "", new { @class = "text-danger" })</td>
                             </tr>
                             <tr>
                                 <td><b>Project Name</b></td>
                                 <td> @Html.TextBoxFor(i => i.Projectname, new { @class = "", required = "required", @type ="text" })</td>
-
                                 <td> @Html.ValidationMessageFor(model => model.Projectname, "", new { @class = "text-danger" })</td>
                             </tr>
                             <tr>
                                 <td><b>Manager Name</b></td>
                                 <td>@Html.TextBoxFor(i => i.Managername, new { @class = "", required = "required", @type ="text" })</td>
-
                                 <td> @Html.ValidationMessageFor(model => model.Managername, "", new { @class = "text-danger" })</td>
                         </table>
                     </div>
@@ -90,8 +87,7 @@
         url: '/Employee/Home',
         dataType: "json",
         method: 'post',
-        success: function (data) {
-            
+        success: function (data) {          
             var Table = $('#tbl tbody');
             Table.empty();
             if (data.length) {
