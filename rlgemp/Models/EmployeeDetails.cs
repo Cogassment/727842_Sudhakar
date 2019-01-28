@@ -28,6 +28,5 @@ namespace rlgemp.Models
         [RegularExpression("^[a-zA-Z#@$!& ]*$", ErrorMessage = "Please Enter Valid ManagerName")]
 
         public string Managername { get; set; }
-
     }
 }
