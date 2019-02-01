@@ -23,10 +23,12 @@ namespace rlgemp.Controllers
             return View();
         }
 
-        public ActionResult Home()
-        {         
-            var details = employeeservice.Home();
-            return Json(details);
+        public ActionResult DisplayEmployeeDetails()
+        {
+
+            var result = employeeservice.DisplayEmployeeDetails();
+
+            return Json(result);
         }
 
         [HttpPost]
@@ -48,6 +50,5 @@ namespace rlgemp.Controllers
                 return RedirectToAction("Errorpage");
             }
         }
-
     }
 }
