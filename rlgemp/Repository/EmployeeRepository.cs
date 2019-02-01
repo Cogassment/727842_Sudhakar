@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -38,16 +38,15 @@ namespace rlgemp.Repository
                     viewMessage = "error";
                 }
             }
-
-            return viewMessage;
+              return viewMessage;
         }
 
         public bool AssociateIdExists(string associateId)
         {
             bool isUserExists = false;
-            string connectionstring = ConfigurationManager.ConnectionStrings["Constring"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Constring"].ConnectionString;
 
-            using (SqlConnection connection = new SqlConnection(connectionstring))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string userExistQuery = "Select Count(*) From dbo.empdetails Where associateid='" + associateId + "'";
                 using (SqlCommand command = new SqlCommand(userExistQuery, connection))
@@ -60,12 +59,12 @@ namespace rlgemp.Repository
 
             return isUserExists;
         }
-        public List<EmployeeDetails> Home()
+        public List<EmployeeDetails> DisplayEmployeeDetails()
         {
-            string connectionstring = ConfigurationManager.ConnectionStrings["Constring"].ConnectionString;
+            string connectionString = ConfigurationManager.ConnectionStrings["Constring"].ConnectionString;
             EmployeeDetails emplopyedetails=null;
             List<EmployeeDetails> employee = new List<EmployeeDetails>();
-            using (SqlConnection connection = new SqlConnection(connectionstring))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand cmd = new SqlCommand("select * from empdetails", connection);
                 connection.Open();
@@ -83,6 +82,5 @@ namespace rlgemp.Repository
             }
             return employee;
         }
-
-    }
+ }
 }
