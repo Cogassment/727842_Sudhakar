@@ -29,10 +29,9 @@ namespace rlgemp.Services
             return result;
         }
 
-        public List<EmployeeDetails> Home()
+        public List<EmployeeDetails> DisplayEmployeeDetails()
         {
-            return employeeRepository.Home();
+            return employeeRepository.DisplayEmployeeDetails();
         }
     }
-
 }
