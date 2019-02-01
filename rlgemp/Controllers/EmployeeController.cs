@@ -25,9 +25,7 @@ namespace rlgemp.Controllers
 
         public ActionResult Home()
         {         
-
             var details = employeeservice.Home();
-
             return Json(details);
         }
 
